@@ -2,11 +2,11 @@ import requests
 import csv
 from time import sleep
 from bs4 import BeautifulSoup
-import os
-#f = open('library_seat_log.csv','a')
-#wr = csv.writer(f)
-#wr.writerow(['time','Area-C left','Area-D left'])
-#f.close()
+
+f = open('library_seat_log.csv','a')
+wr = csv.writer(f)
+wr.writerow(['time','Area-C left','Area-D left'])
+f.close()
 for _ in range(300000):
     f = open('library_seat_log.csv','a')
     wr = csv.writer(f)
@@ -31,9 +31,7 @@ for _ in range(300000):
     C_left = C.split(' : <span>')[1].split('/')[0].strip()
     wr.writerow([time,C_left,D_left])
     f.close()
-    os.system('./gitpush.sh')
-    sleep(60)
-
+    sleep(10)
 
 
 
