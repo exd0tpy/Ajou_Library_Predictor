@@ -36474,3 +36474,42 @@ See 'git help config' and search for 'push.default' for further information.
 
 To https://github.com/ICEB3AR/Ajou_Library_Predictor.git
    48fe1d8..b28dc20  master -> master
+[master f8e5121] update csv
+ 2 files changed, 26 insertions(+)
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+To https://github.com/ICEB3AR/Ajou_Library_Predictor.git
+   b28dc20..f8e5121  master -> master
+Traceback (most recent call last):
+  File "library_seat_logger.py", line 13, in <module>
+    r=requests.get("http://u-campus.ajou.ac.kr/ltms/mobile/lst.mobile")
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/api.py", line 60, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 533, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/sessions.py", line 646, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='u-campus.ajou.ac.kr', port=80): Max retries exceeded with url: /ltms/mobile/lst.mobile (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f109045e1d0>: Failed to establish a new connection: [Errno -2] Name or service not known',))

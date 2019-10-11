@@ -32,7 +32,7 @@ for _ in range(300000):
     wr.writerow([time,C_left,D_left])
     f.close()
     os.system('./gitpush.sh')
-    sleep(60)
+    sleep(120)
 
 
 
