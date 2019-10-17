@@ -10,7 +10,11 @@ import os
 for _ in range(300000):
     f = open('library_seat_log.csv','a')
     wr = csv.writer(f)
-    r=requests.get("http://u-campus.ajou.ac.kr/ltms/mobile/lst.mobile")
+    try:
+        r=requests.get("http://u-campus.ajou.ac.kr/ltms/mobile/lst.mobile")
+    except:
+        sleep(300)
+        continue
     c = r.content
     html = BeautifulSoup(c,"html.parser")
     li = html.find_all("li")
